@@ -1,7 +1,8 @@
 from django.conf.urls import url
-from . import views
+from capture import views
+
 
 urlpatterns = [ url(r'^$', views.index, name='index'), 
-		url(r'^(P<opportunity_id>[0-9]+)/$', views.oppdetail, name = 'oppdetail'),
-		url(r'^(P<opportunity_id>[0-9]+)/results', views.oppresults, name='oppresults'),
+		url(r'^(?P<opportunity_id>\d+)$', views.oppdetail, name = 'oppdetail'),
+		url(r'^(?P<opportunity_id>\d+)/results', views.oppresults, name='oppresults'),
 	]
