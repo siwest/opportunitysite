@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 from .models import Opportunity
 
-global latest_oppportunity_list
+global context
 
 def index(request):
-	latest_oppportunity_list = Opportunity.objects.order_by('-solicitation_date')[:5]
-	output = ', '.join([o.opportunity_name for o in latest_oppportunity_list])
-	return HttpResponse(output)
-
+	latest_opportunity_list = Opportunity.objects.order_by('-solicitation_date')[:5]
+	context = {'latest_opportunity_list': latest_opportunity_list}
+	return render(request, 'capture/index.html', context)
 
 
 # Create your views here.
