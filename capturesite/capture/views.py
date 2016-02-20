@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from .models import Opportunity
@@ -13,12 +14,8 @@ def index(request):
 
 # Create your views here.
 def oppdetail(request, opportunity_id):
-	try:
-		opportunity = Opportunity.objects.get(pk=opportunity_id)
-	except Opportunity.DoesNotExist:
-		raise Http404("Opportunity does not exist")
+	opportunity = get_object_or_404(Opportunity, pk=opportunity_id)
 	return render(request, 'capture/detail.html', {'opportunity': opportunity})
-	# return HttpResponse("You're looking at opportunity %s." % opportunity_id)
 
 def oppresults(request, opportunity_id):
 	response = "You're looking at the results of opportunity %s."
