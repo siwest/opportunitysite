@@ -13,7 +13,12 @@ def index(request):
 
 # Create your views here.
 def oppdetail(request, opportunity_id):
-	return HttpResponse("You're looking at opportunity %s." % opportunity_id)
+	try:
+		opportunity = Opportunity.objects.get(pk=opportunity_id)
+	except Opportunity.DoesNotExist:
+		raise Http404("Opportunity does not exist")
+	return render(request, 'capture/detail.html', {'opportunity': opportunity})
+	# return HttpResponse("You're looking at opportunity %s." % opportunity_id)
 
 def oppresults(request, opportunity_id):
 	response = "You're looking at the results of opportunity %s."
