@@ -1,4 +1,3 @@
-apt-xapian-index
 chardet==2.0.1
 command-not-found==0.3
 debtagshw==0.1
