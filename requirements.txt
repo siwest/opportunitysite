@@ -17,7 +17,7 @@ PAM==0.4.2
 pexpect==3.1
 Pillow==2.3.0
 piston-mini-client==0.7.5
-psycopg2==2.4.5
+psycopg2==2.5.3
 pycrypto==2.6.1
 pycups==1.9.66
 pygobject==3.12.0
