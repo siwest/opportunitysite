@@ -1,9 +1,0 @@
-{% if latest_opportunity_list %}
-	<ul>
-	{% for opportunity in latest_opportunity_list %}
-		<li><a href="/capture/{{ opportunity.id }}/">{{ opportunity.opportunity_name }}</a></li>
-	{% endfor %}
-	</ul>
-{% else %}
-	<p>No polls are available.</p>
-{% endif %}

@@ -1,6 +1,0 @@
-def oppdetail(request, opportunity_id):
-	return HttpResponse("You're looking at opportunity %s." % opportunity_id)
- 
-def oppresults(request, opportunity_id):
-	response = "You're looking at all opportunities."
-	return HttpResponse(response % opportunity_id)
