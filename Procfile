@@ -1,1 +1,1 @@
-web: manage.py runserver 0.0.0.0:$PORT --noreload
+web: capturesite/manage.py runserver 0.0.0.0:$PORT --noreload
